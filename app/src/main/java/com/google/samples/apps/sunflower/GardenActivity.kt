@@ -28,6 +28,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.samples.apps.sunflower.databinding.ActivityGardenBinding
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
+
 
 class GardenActivity : AppCompatActivity() {
 
@@ -51,6 +55,10 @@ class GardenActivity : AppCompatActivity() {
 
         // Set up navigation menu
         binding.navigationView.setupWithNavController(navController)
+        AppCenter.start(application, "f5fd9509-3f16-4646-93b0-419640c4b810", Analytics::class.java, Crashes::class.java)
+
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
